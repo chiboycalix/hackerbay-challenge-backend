@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "v11.0.0"
+after_success: npm run coveralls
+
+cache:
+  directories:
+    - "node_modules"
+script:
+- npm test
+- npm run coveralls
+env:
+  global:
+    - export NODE_ENV=test
